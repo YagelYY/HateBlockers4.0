@@ -73,7 +73,7 @@ LABELS = ["toxic", "threat"]
 SELECTED_INDICES = [ALL_LABELS.index(label) for label in LABELS]
 # App UI
 st.title("Toxic Comment Classifier")
-st.logo('logo.jpg', size='large')
+st.logo('images/logo.jpg', size='large')
 
 
 user_input = st.text_area("Enter a comment:", "")
@@ -94,7 +94,7 @@ if st.button("Analyze"):
         for score in scores:
             if score >= 0.5:
                 st.badge("Danger", icon="🚨", color="red")
-                set_bg_from_local("toxicBackground.png")
+                set_bg_from_local("images/background.jpg")
                 isDanger=True
                 break
         if not isDanger:
